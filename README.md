@@ -1,2 +1,2 @@
-# Jogo_de_Luta
+# Jogo
 Luta na Arena
