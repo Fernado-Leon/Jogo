@@ -1,5 +1,5 @@
 import pygame as pg
-from CONFIG_JOGO import ConfigJogo
+from constantes import ConfigJogo
 from lista_personagens import lista_1
 import sys
 

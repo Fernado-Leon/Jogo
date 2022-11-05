@@ -1,6 +1,6 @@
 
 import pygame as pg
-from CONFIG_JOGO import ConfigJogo
+from constantes import ConfigJogo
 from personagem import Personagem
 
 STALIN=Personagem("STALIN", 2000, 0.8, 35, 150, (ConfigJogo.LARGURA_TELA//4,ConfigJogo.ALTURA_TELA//2 ))

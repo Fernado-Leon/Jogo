@@ -1,10 +1,10 @@
 import pygame as pg
-from CONFIG_JOGO import ConfigJogo
-from Cena_inicial import Cenainicial
-from Cena_historia import Historia
-from Cena_Selecao1 import *
-from Cena_Selecao2 import *
-from Cena_principal import *
+from constantes import ConfigJogo
+from cena_inicial import Cenainicial
+from cena_historia import Historia
+from cena_selecao1 import *
+from cena_selecao2 import *
+from cena_principal import *
 
 
 class guerrafria:
@@ -15,6 +15,10 @@ class guerrafria:
             ConfigJogo.LARGURA_TELA,
             ConfigJogo.ALTURA_TELA
         ))
+
+        # fernando: adiciona titulo o nome na pagina 
+        pg.display.set_caption('Guerra Fria')
+
 
     def rodar(self):
         ConfigJogo.Tela=1

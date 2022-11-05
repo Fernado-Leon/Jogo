@@ -1,7 +1,7 @@
 from typing import Tuple
 import pygame as pg
 
-from CONFIG_JOGO import ConfigJogo
+from constantes import ConfigJogo
 
 
 

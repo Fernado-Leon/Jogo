@@ -1,6 +1,6 @@
 
 import pygame as pg
-from CONFIG_JOGO import ConfigJogo
+from constantes import ConfigJogo
 import sys
 
 

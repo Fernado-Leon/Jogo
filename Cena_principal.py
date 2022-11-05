@@ -2,11 +2,11 @@
 import sys
 from typing import Tuple
 import pygame as pg
-from CONFIG_JOGO import ConfigJogo
+from constantes import ConfigJogo
 from personagem import Personagem
 from lista_personagens import *
-from Cena_Selecao1 import *
-from Cena_Selecao2 import *
+from cena_selecao1 import *
+from cena_selecao2 import *
 
 
 class CenaPrincipal:
