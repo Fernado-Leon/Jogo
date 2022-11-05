@@ -1,5 +1,5 @@
 import pygame as pg
-from constantes import ConfigJogo
+from constantes import Constantes
 from cena_inicial import Cenainicial
 from cena_historia import Historia
 from cena_selecao1 import *
@@ -12,8 +12,8 @@ class guerrafria:
         pg.init()
 
         self.tela = pg.display.set_mode((
-            ConfigJogo.LARGURA_TELA,
-            ConfigJogo.ALTURA_TELA
+            Constantes.LARGURA_TELA,
+            Constantes.ALTURA_TELA
         ))
 
         # fernando: adiciona titulo o nome na pagina 
@@ -21,23 +21,23 @@ class guerrafria:
 
 
     def rodar(self):
-        ConfigJogo.Tela=1
+        Constantes.Tela=1
         while True:
-            if ConfigJogo.Tela==1:
+            if Constantes.Tela==1:
                 cena = Cenainicial(self.tela)        
                 cena.rodar()
-            if ConfigJogo.Tela==2:
+            if Constantes.Tela==2:
                 cena=Historia(self.tela)
                 cena.rodar()
-            if ConfigJogo.Tela==3:
+            if Constantes.Tela==3:
                 cena=CenaSelecao1(self.tela)
                 cena.rodar()
                 indice_1=cena.escolha()
-            if ConfigJogo.Tela==4:
+            if Constantes.Tela==4:
                 cena=CenaSelecao2(self.tela)
                 cena.rodar()
                 indice_2=cena.escolha()
-            if ConfigJogo.Tela==5:
+            if Constantes.Tela==5:
                 
                 cena=CenaPrincipal(self.tela, indice_1, indice_2)
                 cena.rodar()

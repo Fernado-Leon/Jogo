@@ -2,7 +2,7 @@
 import sys
 from typing import Tuple
 import pygame as pg
-from constantes import ConfigJogo
+from constantes import Constantes
 from personagem import Personagem
 from lista_personagens import *
 from cena_selecao1 import *
@@ -30,7 +30,7 @@ class CenaPrincipal:
             if (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE) or \
                     (pg.key.get_pressed()[pg.K_ESCAPE]):
                 self.fim = True
-                ConfigJogo.Tela=1
+                Constantes.Tela=1
 
        
             #if pg.key.get_pressed()[pg.K_SPACE]:

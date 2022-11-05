@@ -1,7 +1,7 @@
 from typing import Tuple
 import pygame as pg
 
-from constantes import ConfigJogo
+from constantes import Constantes
 
 
 
@@ -40,15 +40,15 @@ class Personagem:
         novo_x = x + self.velocidade_x
 
         if ((novo_y >= 0) and \
-                ((novo_y + ConfigJogo.tamanho_per) <= ConfigJogo.ALTURA_TELA)) and \
-                    ((novo_x>=0) and ((novo_x +ConfigJogo.tamanho_per)<=ConfigJogo.LARGURA_TELA)):
+                ((novo_y + Constantes.tamanho_per) <= Constantes.ALTURA_TELA)) and \
+                    ((novo_x>=0) and ((novo_x +Constantes.tamanho_per)<=Constantes.LARGURA_TELA)):
             self.posicao = (novo_x, novo_y)
 
     def desenha(self, tela):
         x = self.posicao[0]
         y = self.posicao[1]
-        l = ConfigJogo.tamanho_per
-        a = ConfigJogo.tamanho_per
+        l = Constantes.tamanho_per
+        a = Constantes.tamanho_per
         pg.draw.rect(
             tela,
             (0,0,0),
@@ -56,4 +56,4 @@ class Personagem:
         )
 
     def position(self) -> Tuple[float, float, float, float]:
-        return self.posicao + (ConfigJogo.tamanho_per, ConfigJogo.tamanho_per)
+        return self.posicao + (Constantes.tamanho_per, Constantes.tamanho_per)

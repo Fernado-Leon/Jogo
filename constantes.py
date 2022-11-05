@@ -1,5 +1,5 @@
 
-class ConfigJogo:
+class Constantes:
     LARGURA_TELA = 600
     ALTURA_TELA = 400
     COR_TITULO = (0, 0, 0)
