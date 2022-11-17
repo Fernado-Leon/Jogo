@@ -1,43 +1,51 @@
 import pygame as pg
-from constantes import Constantes
-from cena_inicial import Cenainicial
-from cena_historia import Historia
-from cena_selecao1 import *
-from cena_selecao2 import *
-from cena_principal import *
+from CONFIG_JOGO import ConfigJogo
+from Cena_inicial import Cenainicial
+from Cena_historia import Historia
+from Cena_Selecao1 import *
+from Cena_Selecao2 import *
+from Cena_principal import *
 
 
 class guerrafria:
     def __init__(self):
         pg.init()
 
-        self.tela = pg.display.set_mode((
-            Constantes.LARGURA_TELA,
-            Constantes.ALTURA_TELA
-        ))
-
-        # fernando: adiciona titulo o nome na pagina 
-        pg.display.set_caption('Guerra Fria')
-
+      
 
     def rodar(self):
-        Constantes.Tela=1
+        ConfigJogo.Tela=1
         while True:
-            if Constantes.Tela==1:
+            if ConfigJogo.Tela==1:
+                ConfigJogo.LARGURA_TELA=600
+                ConfigJogo.ALTURA_TELA=400
+                self.tela = pg.display.set_mode((
+            ConfigJogo.LARGURA_TELA,
+            ConfigJogo.ALTURA_TELA
+            ))
                 cena = Cenainicial(self.tela)        
                 cena.rodar()
-            if Constantes.Tela==2:
+            if ConfigJogo.Tela==2:
                 cena=Historia(self.tela)
                 cena.rodar()
-            if Constantes.Tela==3:
+            if ConfigJogo.Tela==3:
                 cena=CenaSelecao1(self.tela)
                 cena.rodar()
                 indice_1=cena.escolha()
-            if Constantes.Tela==4:
+            if ConfigJogo.Tela==4:
                 cena=CenaSelecao2(self.tela)
                 cena.rodar()
                 indice_2=cena.escolha()
-            if Constantes.Tela==5:
+            if ConfigJogo.Tela==5:
+               
+                ConfigJogo.LARGURA_TELA=1200
+                ConfigJogo.ALTURA_TELA=900
+                self.tela = pg.display.set_mode((
+            ConfigJogo.LARGURA_TELA,
+            ConfigJogo.ALTURA_TELA
+            ))
+                
+              
                 
                 cena=CenaPrincipal(self.tela, indice_1, indice_2)
                 cena.rodar()

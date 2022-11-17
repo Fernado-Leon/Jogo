@@ -1,5 +1,7 @@
 
-class Constantes:
+class ConfigJogo:
+
+
     LARGURA_TELA = 600
     ALTURA_TELA = 400
     COR_TITULO = (0, 0, 0)
@@ -11,3 +13,4 @@ class Constantes:
     VELOCIDADE_y=1
 
     tamanho_per=50
+    meiotamanho_per=25
