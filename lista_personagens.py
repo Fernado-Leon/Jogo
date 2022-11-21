@@ -6,6 +6,7 @@ from ataque_fisico import *
 from ataque_magico import magia
 from invocar import minion
 from tirambasso import tirinho
+from teleporte import dash
 
 tiro=tirinho()
 ataque_perto=fisico()
@@ -18,7 +19,7 @@ GORBACHOV=Personagem("GORBACHOV", 3600, 0.2, 40, 0, (1200//4,900//2 ),(ataque_pe
 IVAN_DRAGO=Personagem("IVAN DRAGO", 3000, 1, 40, 0, (1200//4,900//2 ),(ataque_perto, magia()))
 RASPUTIN=Personagem("RASPUTIN", 1600, 1, 2, 190, (1200//4,900//2 ),(ataque_perto, magia()))
 RAMBO=Personagem("RAMBO", 3000, 1.2, 40, 0, (1200*0.75,900//2 ),(ataque_perto, magia()))
-MUHAMMAD_ALI=Personagem("MUHAMMAD ALI", 1800, 6, 50, 0, (1200*0.75,900//2 ),(ataque_perto, magia()))
+MUHAMMAD_ALI=Personagem("MUHAMMAD ALI", 1800, 6, 50, 0, (1200*0.75,900//2 ),(ataque_perto, dash()))
 JESSE_JAMES=Personagem("JESSE JAMES", 2800, 1.2, 50, 120, (1200*0.75,900//2), (ataque_perto, tiro))
 JOHN_F_KENNEDY=Personagem("JOHN F KENNEDY", 1000, .8, 50, 30, (1200*0.75,900//2),(ataque_invocar, magia()))
 soldado=Personagem=("soldado", 300, 1, 20, 0, (1200//2,900//2 ), (ataque_perto))

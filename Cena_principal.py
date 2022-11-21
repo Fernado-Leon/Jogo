@@ -106,7 +106,8 @@ class CenaPrincipal:
                 
             if  pg.key.get_pressed()[pg.K_z] and self.cronometro_1.tempo_passado()>2   :
                     self.player_1.ataque[1].dano(self.tela, self.player_1, self.player_2)
-                    if self.cronometro_1.tempo_passado()>2.8:
+                    self.player_1.ataque[1].tempo()
+                    if  self.player_1.ataque[1].termina==1:
                         self.player_1.ataque[1].resetar_posicao(self.player_1)
                         self.cronometro_1.reset()
                 
@@ -129,10 +130,11 @@ class CenaPrincipal:
 
             if  pg.key.get_pressed()[pg.K_p] and self.cronometro_2.tempo_passado()>2  :
                     self.player_2.ataque[1].dano(self.tela, self.player_2, self.player_1)
-                    if self.cronometro_2.tempo_passado()>2.8:
+                    self.player_2.ataque[1].tempo()
+                    if  self.player_2.ataque[1].termina==1:
                         self.player_2.ataque[1].resetar_posicao(self.player_2)
-                        self.cronometro_2.reset()       
-          
+                        self.cronometro_2.reset()
+                   
 
 
    

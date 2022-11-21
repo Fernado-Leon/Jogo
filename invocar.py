@@ -3,7 +3,7 @@ from CONFIG_JOGO import *
 from Cronometro import *
 import pygame as pg
 import math
-
+import random
 class minion:
     def __init__(self, soldado_1, soldado_2):
         self.cronometro=cronometro()
@@ -21,6 +21,7 @@ class minion:
         self.posicao_minion_2=(self.x_2, self.y_2, self.l, self.a)
         self.tela=0
         self.termina=1
+        self.aleatorio=random.randint(1, 3)
 
       
         
@@ -40,20 +41,22 @@ class minion:
             self.mover_minion_1(inimigo)
             self.mover_minion_2(inimigo)
     def desenha(self, tela):
+          
             self.posicao_minion_1=(self.x_1, self.y_1, self.l, self.a)
             self.posicao_minion_2=(self.x_2, self.y_2, self.l, self.a)
        
-           
-            pg.draw.rect(
-            tela,
-            (0,0,0),
-            pg.rect.Rect((self.posicao_minion_1))
-        )
-            pg.draw.rect(
-            tela,
-            (0,0,0),
-            pg.rect.Rect((self.posicao_minion_2))
-        )
+            if self.aleatorio>=1:
+                pg.draw.rect(
+                tela,
+                (0,0,0),
+                pg.rect.Rect((self.posicao_minion_1))
+                   )
+                if self.aleatorio>=2:
+                    pg.draw.rect(
+                    tela,
+                    (0,0,0),
+                    pg.rect.Rect((self.posicao_minion_2))
+                     )
     def mover_minion_1(self, inimigo):
         dist_1 = math.sqrt(
         (inimigo.posicao[0] - self.x_1) ** 2 +
@@ -110,6 +113,7 @@ class minion:
             self.cronometro.reset()
         return self.termina
     def reset(self):
+        self.aleatorio=random.randint(1, 3)
         self.termina=0
         self.x_1=ConfigJogo.LARGURA_TELA//2
         self.y_1=ConfigJogo.ALTURA_TELA*.75

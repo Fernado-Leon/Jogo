@@ -7,7 +7,7 @@ class fisico:
         self.cronometro=cronometro()
         self.distancia_1=0
         self.distancia_2=0
-        self.termina=1
+        self.termina=0
       
         
     def dano(self, tela, jogador, inimigo):
