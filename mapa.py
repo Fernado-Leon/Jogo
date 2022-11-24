@@ -1,10 +1,10 @@
 import pygame
-from constantes import Constantes
+from  CONFIG_JOGO import ConfigJogo
 
 class Mapa:
     def __init__(self) -> None:
         pygame.init()
-        size = [Constantes.LARGURA_TELA, Constantes.ALTURA_TELA]
+        size = [ConfigJogo.LARGURA_TELA,ConfigJogo.ALTURA_TELA]
         screen = pygame.display.set_mode(size)
         
         pygame.display.set_caption
