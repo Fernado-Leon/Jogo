@@ -15,11 +15,13 @@ class tirinho:
         self.y=ConfigJogo.ALTURA_TELA//2
         self.posicao_magia=(self.x, self.y)
         self.termina=0
+        self.direcao_tiro=1
         
         
       
         
     def dano(self, tela, jogador, inimigo):
+            self.direcao_tiro=jogador.direcao
            
           
             self.posicao_magia=(self.x, self.y)
@@ -36,11 +38,11 @@ class tirinho:
            
 
     def mover_magia(self, jogador):
-            if jogador.direcao==0:  
+            if self.direcao_tiro==0:  
                 if self.x<ConfigJogo.LARGURA_TELA:
                     self.x=self.x+self.velocidade_magia
                     self.posicao_magia=(self.x, self.y)
-            if jogador.direcao==1:  
+            if  self.direcao_tiro==1:  
                 if self.x<ConfigJogo.LARGURA_TELA:
                     self.x=self.x-self.velocidade_magia
                     self.posicao_magia=(self.x, self.y)

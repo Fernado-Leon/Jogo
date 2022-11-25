@@ -5,16 +5,15 @@ import pygame as pg
 import math
 import random
 class minion:
-    def __init__(self, soldado_1, soldado_2):
+    def __init__(self, soldado):
         self.cronometro=cronometro()
         self.distancia_1=0
         self.distancia_2=0
-        self.soldado_1=soldado_1
-        self.soldado_2=soldado_2
-        self.x_1=self.soldado_1.posicao[0]
-        self.y_1=self.soldado_1.posicao[1]
-        self.x_2=self.soldado_2.posicao[0]
-        self.y_2=self.soldado_2.posicao[1]
+        self.soldado=soldado
+        self.x_1=self.soldado[0].posicao[0]
+        self.y_1=self.soldado[0].posicao[1]
+        self.x_2=self.soldado[1].posicao[0]
+        self.y_2=self.soldado[1].posicao[1]
         self.l = ConfigJogo.meiotamanho_per
         self.a = ConfigJogo.meiotamanho_per
         self.posicao_minion_1=(self.x_1, self.y_1, self.l, self.a)
@@ -22,22 +21,19 @@ class minion:
         self.tela=0
         self.termina=1
         self.aleatorio=random.randint(1, 3)
+        self.desenhado_1=0
+        self.desenhado_2=0
 
       
         
     def dano(self, tela, jogador, inimigo):
             self.tela=tela
-            self.desenha(self.tela)
-            
-            self.distancia_1a= ((self.x_1+ConfigJogo.meiotamanho_per//2-inimigo.posicao[0])**2 +(self.y_1+ConfigJogo.meiotamanho_per//2-inimigo.posicao[1])**2)**0.5
-            self.distancia_1b= ((inimigo.posicao[0]+ConfigJogo.meiotamanho_per-self.x_1)**2 +(inimigo.posicao[1]+ConfigJogo.meiotamanho_per-self.y_1)**2)**0.5
-            self.distancia_2a= ((self.x_2+ConfigJogo.meiotamanho_per//2-inimigo.posicao[0])**2 +(self.y_2+ConfigJogo.meiotamanho_per//2-inimigo.posicao[1])**2)**0.5
-            self.distancia_2b= ((inimigo.posicao[0]+ConfigJogo.meiotamanho_per-self.x_2)**2 +(inimigo.posicao[1]+ConfigJogo.meiotamanho_per-self.y_2)**2)**0.5
-         
-            if self.distancia_1a<=50 or self.distancia_1a<=50:
-                inimigo.vida-=self.soldado_1.dano_fisico//20
-            if self.distancia_2a<=50 or self.distancia_2a<=50:
-                inimigo.vida-=self.soldado_2.dano_fisico//20
+            self.desenha(self.tela) 
+            if(((self.x_1-inimigo.posicao[0])**2)+ ((self.y_1-inimigo.posicao[1])**2))**0.5<=50 and self.desenhado_1==1:
+                inimigo.vida-=self.soldado[1].dano_fisico//20
+               
+            if (((self.x_2-inimigo.posicao[0])**2)+ ((self.y_2-inimigo.posicao[1])**2))**0.5<=50  and self.desenhado_2==1:
+                inimigo.vida-=self.soldado[1].dano_fisico//20
             self.mover_minion_1(inimigo)
             self.mover_minion_2(inimigo)
     def desenha(self, tela):
@@ -51,12 +47,14 @@ class minion:
                 (0,0,0),
                 pg.rect.Rect((self.posicao_minion_1))
                    )
+                self.desenhado_1=1
                 if self.aleatorio>=2:
                     pg.draw.rect(
                     tela,
                     (0,0,0),
                     pg.rect.Rect((self.posicao_minion_2))
                      )
+                    self.desenhado_2=1
     def mover_minion_1(self, inimigo):
         dist_1 = math.sqrt(
         (inimigo.posicao[0] - self.x_1) ** 2 +
@@ -72,8 +70,8 @@ class minion:
             minion_vx_1 /= norma
             minion_vy_1 /= norma
           
-            minion_vx_1 *= self.soldado_1.velocidade
-            minion_vy_1 *= self.soldado_1.velocidade
+            minion_vx_1 *= self.soldado[0].velocidade
+            minion_vy_1 *= self.soldado[0].velocidade
         else:
             minion_vx_1 = 0
             minion_vy_1 = 0
@@ -97,8 +95,8 @@ class minion:
             minion_vx_2 /= norma
             minion_vy_2 /= norma
           
-            minion_vx_2 *= self.soldado_2.velocidade
-            minion_vy_2 *= self.soldado_2.velocidade
+            minion_vx_2 *= self.soldado[1].velocidade
+            minion_vy_2 *= self.soldado[1].velocidade
         else:
             minion_vx_2 = 0
             minion_vy_2 = 0
@@ -119,6 +117,8 @@ class minion:
         self.y_1=ConfigJogo.ALTURA_TELA*.75
         self.x_2=ConfigJogo.LARGURA_TELA//2
         self.y_2=ConfigJogo.ALTURA_TELA//4
+        self.desenhado_1==0
+        self.desenhado_2==0
         
     
         

@@ -23,6 +23,7 @@ class CenaPrincipal:
         self.cronometro_2=cronometro()
         self.cronometro_ataque_1=cronometro()
         self.cronometro_ataque_2=cronometro()
+        self.cronometro_final=cronometro()
         self.vida_1=self.player_1.vida
         self.vida_2=self.player_2.vida
     def rodar(self):
@@ -38,27 +39,20 @@ class CenaPrincipal:
                 sys.exit(0)
             if (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE) or \
                     (pg.key.get_pressed()[pg.K_ESCAPE]) or \
-                        (self.player_1.vida<0 or self.player_2.vida<0):
+                        (self.player_1.vida<0 or self.player_2.vida<0) or \
+                         self.cronometro_final.tempo_passado()>=60:
                 self.fim = True
                 ConfigJogo.Tela=1
                 self.player_1.vida=self.vida_1
                 self.player_2.vida=self.vida_2
+               
                 
-
-       
-            #if pg.key.get_pressed()[pg.K_SPACE]:
-                #self.fim = True
-                #ConfigJogo.Tela=4
-
-        
             if pg.key.get_pressed()[pg.K_w] :
                 self.player_1.mover_para_cima()
             elif pg.key.get_pressed()[pg.K_s]:
                 self.player_1.mover_para_baixo()
             else:
                 self.player_1.para_y()
-
-
             if pg.key.get_pressed()[pg.K_d]:
                 self.player_1.mover_para_direita()
             elif pg.key.get_pressed()[pg.K_a]:
@@ -76,8 +70,6 @@ class CenaPrincipal:
                 self.player_2.mover_para_direita()
             elif pg.key.get_pressed()[pg.K_j]:
                 self.player_2.mover_para_esquerda()
-                
-                
             else:
                 self.player_2.para_x()
            
@@ -92,9 +84,8 @@ class CenaPrincipal:
         
 
     def desenha(self):
-
         self.tela.fill((255, 255, 255))
-      
+        self.desenha_tempo()
         self.ataca_player_1()
         self.ataca_player_2()
         self.player_2.desenha(self.tela)
@@ -134,6 +125,15 @@ class CenaPrincipal:
                     if  self.player_2.ataque[1].termina==1:
                         self.player_2.ataque[1].resetar_posicao(self.player_2)
                         self.cronometro_2.reset()
+    def desenha_tempo(self):
+        tempo=ConfigJogo.DURACAO_PARTIDA-self.cronometro_final.tempo_passado()
+        font_subtitulo = pg.font.SysFont(None, ConfigJogo.Fonte_HISTORIA)
+        self.subtitulo = font_subtitulo.render(
+          f' {tempo:.0f}', True, ConfigJogo.COR_TITULO)
+        px = ConfigJogo.LARGURA_TELA // 2 - self.subtitulo.get_size()[0] // 2
+        py = (0.3 * ConfigJogo.ALTURA_TELA // 2)
+        self.tela.blit(self.subtitulo, (px, py))
+                        
                    
 
 

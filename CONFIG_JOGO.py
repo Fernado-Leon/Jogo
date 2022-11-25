@@ -11,6 +11,6 @@ class ConfigJogo:
     Fonte_HISTORIA=25
     VELOCIDADE_x=1
     VELOCIDADE_y=1
-
+    DURACAO_PARTIDA=60
     tamanho_per=50
     meiotamanho_per=25

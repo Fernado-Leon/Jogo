@@ -38,8 +38,8 @@ class guerrafria:
                 indice_2=cena.escolha()
             if ConfigJogo.Tela==5:
                
-                ConfigJogo.LARGURA_TELA=1200
-                ConfigJogo.ALTURA_TELA=900
+                ConfigJogo.LARGURA_TELA=600
+                ConfigJogo.ALTURA_TELA=400
                 self.tela = pg.display.set_mode((
             ConfigJogo.LARGURA_TELA,
             ConfigJogo.ALTURA_TELA
