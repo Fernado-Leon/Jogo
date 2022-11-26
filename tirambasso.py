@@ -20,7 +20,7 @@ class tirinho:
         
       
         
-    def dano(self, tela, jogador, inimigo):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
             self.direcao_tiro=jogador.direcao
            
           
@@ -37,7 +37,7 @@ class tirinho:
             self.mover_magia(jogador)
            
 
-    def mover_magia(self, jogador):
+    def mover_magia(self, jogador:Personagem):
             if self.direcao_tiro==0:  
                 if self.x<ConfigJogo.LARGURA_TELA:
                     self.x=self.x+self.velocidade_magia
@@ -46,7 +46,7 @@ class tirinho:
                 if self.x<ConfigJogo.LARGURA_TELA:
                     self.x=self.x-self.velocidade_magia
                     self.posicao_magia=(self.x, self.y)
-    def resetar_posicao(self, jogador):
+    def resetar_posicao(self, jogador:Personagem):
         self.termina=0
         self.x=jogador.posicao[0]+ConfigJogo.meiotamanho_per
         self.y=jogador.posicao[1]+ConfigJogo.meiotamanho_per

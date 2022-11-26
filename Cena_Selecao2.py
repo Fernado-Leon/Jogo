@@ -1,12 +1,12 @@
 import pygame as pg
 from CONFIG_JOGO import ConfigJogo
-from lista_personagens import lista_2
+from lista_personagens import *
 import sys
 
 
 
 class CenaSelecao2:
-    def __init__(self, tela):
+    def __init__(self, tela:pg.Surface):
         self.tela = tela       
         self.fim= False
         self.indice=0
@@ -100,5 +100,5 @@ class CenaSelecao2:
             rect=(self.px-0.02*ConfigJogo.LARGURA_TELA,self.py_rect,self.px+0.13*ConfigJogo.LARGURA_TELA
         // 2 , 0.1*ConfigJogo.ALTURA_TELA),
             width=3)
-    def escolha(self):
+    def escolha(self)->int:
         return self.indice

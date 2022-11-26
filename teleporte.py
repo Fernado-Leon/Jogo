@@ -10,11 +10,7 @@ class dash:
     def __init__(self):
         self.cronometro=cronometro()
         self.termina=0
-        
-        
-      
-        
-    def dano(self, tela, jogador, inimigo):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
         mouse_position = pg.mouse.get_pos()
         novo_x = mouse_position[0]
         novo_y = mouse_position[1]
@@ -30,7 +26,7 @@ class dash:
             self.termina=1
             self.cronometro.reset()
             
-    def resetar_posicao(self, jogador):
+    def resetar_posicao(self, jogador:Personagem):
        pass
 
               

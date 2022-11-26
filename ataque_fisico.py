@@ -1,4 +1,4 @@
-from personagem import *
+from personagem import Personagem
 from CONFIG_JOGO import *
 from Cronometro import *
 import pygame as pg
@@ -10,7 +10,7 @@ class fisico:
         self.termina=0
       
         
-    def dano(self, tela, jogador, inimigo):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
             pg.draw.circle(
             surface=tela,
             color=(220, 0, 0),

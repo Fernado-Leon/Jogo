@@ -12,7 +12,7 @@ from ataque_fisico import *
 
 
 class CenaPrincipal:
-    def __init__(self, tela, per_1, per_2):
+    def __init__(self, tela:pg.Surface, per_1:Personagem, per_2:Personagem):
         self.indice_1=per_1
         self.indice_2=per_2
         self.tela = tela
@@ -28,6 +28,7 @@ class CenaPrincipal:
         self.vida_2=self.player_2.vida
     def rodar(self):
         while not self.fim:
+            self.Vitoria()
             self.desenha()
             self.tratamento_eventos()
             self.atualiza_estado()
@@ -38,9 +39,7 @@ class CenaPrincipal:
             if (event.type == pg.QUIT):
                 sys.exit(0)
             if (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE) or \
-                    (pg.key.get_pressed()[pg.K_ESCAPE]) or \
-                        (self.player_1.vida<0 or self.player_2.vida<0) or \
-                         self.cronometro_final.tempo_passado()>=60:
+                    (pg.key.get_pressed()[pg.K_ESCAPE]):         
                 self.fim = True
                 ConfigJogo.Tela=1
                 self.player_1.vida=self.vida_1
@@ -133,7 +132,27 @@ class CenaPrincipal:
         px = ConfigJogo.LARGURA_TELA // 2 - self.subtitulo.get_size()[0] // 2
         py = (0.3 * ConfigJogo.ALTURA_TELA // 2)
         self.tela.blit(self.subtitulo, (px, py))
-                        
+    def Vitoria(self)->int:
+        if self.player_2.vida<=0:
+                indice_vitoria=1
+                self.fim = True
+                ConfigJogo.Tela=6
+                return indice_vitoria
+        if self.player_1.vida<=0:
+                indice_vitoria=2
+                self.fim = True
+                ConfigJogo.Tela=6
+                return indice_vitoria
+        if self.cronometro_final.tempo_passado()>=60:
+                indice_vitoria=3
+                self.fim = True
+                ConfigJogo.Tela=6
+                return indice_vitoria
+    
+           
+           
+           
+            
                    
 
 

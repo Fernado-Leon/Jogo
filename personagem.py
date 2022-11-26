@@ -1,14 +1,13 @@
-from typing import Tuple
+
 import pygame as pg
 from Cronometro import cronometro
 from CONFIG_JOGO import ConfigJogo
-from ataque_fisico import *
-from ataque_magico import magia
+from typing import Tuple
 
 
 
 class Personagem:
-    def __init__(self, nome, vida, velocidade, dano_fisico, dano_magico, posicao, ataque):
+    def __init__(self, nome:str, vida:float, velocidade:float, dano_fisico:int, dano_magico:int, posicao:Tuple[int, int], ataque:Tuple):
         self.nome=nome
         self.vida=vida
         self.dano_fisico=dano_fisico
@@ -52,7 +51,7 @@ class Personagem:
                     ((novo_x>=0) and ((novo_x +ConfigJogo.tamanho_per)<=ConfigJogo.LARGURA_TELA)):
             self.posicao = (novo_x, novo_y)
 
-    def desenha(self, tela):
+    def desenha(self, tela:pg.Surface):
         x = self.posicao[0]
         y = self.posicao[1]
         l = ConfigJogo.tamanho_per

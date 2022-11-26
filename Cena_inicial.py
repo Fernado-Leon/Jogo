@@ -2,13 +2,14 @@
 import pygame as pg
 from CONFIG_JOGO import ConfigJogo
 import sys
-
+from lista_personagens import *
 
 
 class Cenainicial:
-    def __init__(self, tela):
+    def __init__(self, tela:pg.Surface):
         self.tela = tela       
         self.fim= False
+        
 
         # cria os textos que serao mostrados na tela
         font_titulo = pg.font.SysFont(None, ConfigJogo.FONTE_TITULO)
@@ -23,6 +24,7 @@ class Cenainicial:
             self.tratamento_eventos()
             self.atualiza_estado()
             self.desenha()
+            
 
     def tratamento_eventos(self):
    
@@ -30,15 +32,14 @@ class Cenainicial:
         for event in pg.event.get():
             
             if (event.type == pg.QUIT) or \
-                (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE) or \
-                    (pg.key.get_pressed()[pg.K_ESCAPE]):
-        
+                (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 sys.exit(0)
 
        
             if pg.key.get_pressed()[pg.K_SPACE]:
                 self.fim = True
                 ConfigJogo.Tela=2
+                
 
     def atualiza_estado(self):
         pass
@@ -53,12 +54,14 @@ class Cenainicial:
         py = (0.3 * ConfigJogo.ALTURA_TELA // 2) + \
         (self.titulo.get_size()[1] * 1.5)
         self.tela.blit(self.subtitulo, (px, py))
-
-
-
-
-
         pg.display.flip()
+    
+    
+
+
+
+
+      
 
 
 

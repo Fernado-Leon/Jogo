@@ -5,7 +5,7 @@ import sys
 
 
 class Historia:
-    def __init__(self, tela):
+    def __init__(self, tela:pg.Surface):
         self.tela = tela       
         self.fim= False
 

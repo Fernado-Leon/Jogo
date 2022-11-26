@@ -5,6 +5,7 @@ from Cena_historia import Historia
 from Cena_Selecao1 import *
 from Cena_Selecao2 import *
 from Cena_principal import *
+from cena_vitoria import *
 
 
 class guerrafria:
@@ -44,11 +45,14 @@ class guerrafria:
             ConfigJogo.LARGURA_TELA,
             ConfigJogo.ALTURA_TELA
             ))
-                
-              
-                
                 cena=CenaPrincipal(self.tela, indice_1, indice_2)
                 cena.rodar()
+                indice_vitoria=cena.Vitoria()
+                
+            if ConfigJogo.Tela==6:
+                cena=Cenavitoria(self.tela, indice_vitoria)
+                cena.rodar()
+                
             
             
             

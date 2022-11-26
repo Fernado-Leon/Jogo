@@ -4,8 +4,9 @@ from Cronometro import *
 import pygame as pg
 import math
 import random
+from typing import List
 class minion:
-    def __init__(self, soldado):
+    def __init__(self, soldado:List[Personagem]):
         self.cronometro=cronometro()
         self.distancia_1=0
         self.distancia_2=0
@@ -26,7 +27,7 @@ class minion:
 
       
         
-    def dano(self, tela, jogador, inimigo):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
             self.tela=tela
             self.desenha(self.tela) 
             if(((self.x_1-inimigo.posicao[0])**2)+ ((self.y_1-inimigo.posicao[1])**2))**0.5<=50 and self.desenhado_1==1:
@@ -36,7 +37,7 @@ class minion:
                 inimigo.vida-=self.soldado[1].dano_fisico//20
             self.mover_minion_1(inimigo)
             self.mover_minion_2(inimigo)
-    def desenha(self, tela):
+    def desenha(self, tela:pg.Surface):
           
             self.posicao_minion_1=(self.x_1, self.y_1, self.l, self.a)
             self.posicao_minion_2=(self.x_2, self.y_2, self.l, self.a)
@@ -55,7 +56,7 @@ class minion:
                     pg.rect.Rect((self.posicao_minion_2))
                      )
                     self.desenhado_2=1
-    def mover_minion_1(self, inimigo):
+    def mover_minion_1(self, inimigo:Personagem):
         dist_1 = math.sqrt(
         (inimigo.posicao[0] - self.x_1) ** 2 +
         (inimigo.posicao[1] - self.y_1) ** 2
@@ -80,7 +81,7 @@ class minion:
         self.x_1 += minion_vx_1
         self.y_1 += minion_vy_1
         self.posicao_minion_1=(self.x_1, self.y_1, self.l, self.a)
-    def mover_minion_2(self, inimigo):
+    def mover_minion_2(self, inimigo:Personagem):
         dist_2 = math.sqrt(
         (inimigo.posicao[0] - self.x_2) ** 2 +
         (inimigo.posicao[1] - self.y_2) ** 2

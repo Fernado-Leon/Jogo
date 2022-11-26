@@ -1,13 +1,13 @@
 import pygame as pg
 from CONFIG_JOGO import ConfigJogo
-from lista_personagens import lista_1
+from lista_personagens import *
 import sys
 
 
 
 
 class CenaSelecao1:
-    def __init__(self, tela):
+    def __init__(self, tela:pg.Surface):
         self.tela = tela       
         self.fim= False
         self.indice=0
@@ -60,13 +60,6 @@ class CenaSelecao1:
             if   (event.type == pg.KEYDOWN and event.key == pg.K_s) and self.indice<=2:
                 self.py_rect=self.py_rect+0.25* ConfigJogo.ALTURA_TELA // 2
                 self.indice+=1
-              
-                
-
-
-    
-
-        
 
     def atualiza_estado(self):
         self.tela.fill((255, 100, 50))
@@ -102,5 +95,5 @@ class CenaSelecao1:
             rect=(self.px-0.1*ConfigJogo.LARGURA_TELA,self.py_rect,self.px+0.03*ConfigJogo.LARGURA_TELA
         // 2 , 0.1*ConfigJogo.ALTURA_TELA),
             width=3)
-    def escolha(self):
+    def escolha(self)->int:
         return self.indice

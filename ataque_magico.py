@@ -19,7 +19,7 @@ class magia:
         
       
         
-    def dano(self, tela, jogador, inimigo):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
 
            
             
