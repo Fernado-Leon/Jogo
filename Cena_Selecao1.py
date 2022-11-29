@@ -1,6 +1,6 @@
 import pygame as pg
 from CONFIG_JOGO import ConfigJogo
-from lista_personagens import *
+from lista_personagens import stats
 import sys
 
 
@@ -11,7 +11,8 @@ class CenaSelecao1:
         self.tela = tela       
         self.fim= False
         self.indice=0
-        self.lista=lista_1
+        self.status=stats()
+        self.lista=self.status.lista_1
         self.px=0
         self.py=0
         self.py_rect=(0.458 * ConfigJogo.ALTURA_TELA // 2) 

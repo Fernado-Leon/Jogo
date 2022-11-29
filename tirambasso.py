@@ -33,7 +33,7 @@ class tirinho:
             width=0
             )
             if (((self.x-inimigo.posicao[0])**2)+((self.y-inimigo.posicao[1])**2))**0.5<=50:
-                inimigo.vida-=jogador.dano_magico//40
+                inimigo.vida-=jogador.dano_fisico//20
             self.mover_magia(jogador)
            
 

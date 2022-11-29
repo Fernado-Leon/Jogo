@@ -16,8 +16,9 @@ class CenaPrincipal:
         self.indice_1=per_1
         self.indice_2=per_2
         self.tela = tela
-        self.player_1=lista_1[per_1]
-        self.player_2=lista_2[per_2]
+        self.status=stats()
+        self.player_1=self.status.lista_1[per_1]
+        self.player_2=self.status.lista_2[per_2]
         self.fim = False
         self.cronometro_1=cronometro()
         self.cronometro_2=cronometro()

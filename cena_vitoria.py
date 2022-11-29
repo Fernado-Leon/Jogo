@@ -2,6 +2,7 @@ import pygame as pg
 from CONFIG_JOGO import ConfigJogo
 import sys
 from Cena_principal import *
+from lista_personagens import stats
 
 
 
@@ -11,6 +12,7 @@ class Cenavitoria:
         self.tela =tela       
         self.fim= False
         self.indice=indice
+        self.status=stats()
         
 
         # cria os textos que serao mostrados na tela
@@ -37,6 +39,7 @@ class Cenavitoria:
             if (event.type == pg.QUIT) or \
                 (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE) or \
                     (pg.key.get_pressed()[pg.K_ESCAPE]):
+                self.status.reseta_tudo()
                 self.fim = True
                 ConfigJogo.Tela=1
           
@@ -58,6 +61,7 @@ class Cenavitoria:
             px = ConfigJogo.LARGURA_TELA // 2 - self.titulo_3.get_size()[0] // 2
             py = (ConfigJogo.ALTURA_TELA *.6)
             self.tela.blit(self.titulo_3, (px, py))
+    
         
         
 

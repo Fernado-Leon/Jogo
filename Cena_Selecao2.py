@@ -10,7 +10,8 @@ class CenaSelecao2:
         self.tela = tela       
         self.fim= False
         self.indice=0
-        self.lista=lista_2
+        self.status=stats()
+        self.lista=self.status.lista_2
         self.px=0
         self.py=0
         self.py_rect=(0.458 * ConfigJogo.ALTURA_TELA // 2) 
