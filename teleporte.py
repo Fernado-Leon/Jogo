@@ -22,7 +22,7 @@ class dash:
 
            
     def tempo(self):
-        if self.cronometro.tempo_passado()>3:
+        if self.cronometro.tempo_passado()>2.1:
             self.termina=1
             self.cronometro.reset()
             

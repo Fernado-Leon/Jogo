@@ -21,7 +21,7 @@ class stats:
         self.IVAN_DRAGO=Personagem("IVAN DRAGO", 3000, 1, 40, 0, (600//4,400//2 ),(self.ataque_perto, magia()))
         self.RASPUTIN=Personagem("RASPUTIN", 1600, 1, 2, 190, (600//4,400//2 ),(cura(), magia()))
         self.RAMBO=Personagem("RAMBO", 3000, 1.2, 40, 0, (600*0.75,400//2 ),(self.ataque_perto, self.tiro))
-        self.MUHAMMAD_ALI=Personagem("MUHAMMAD ALI", 1800, 6, 50, 0, (600*0.75,400//2 ),(self.ataque_perto, dash()))
+        self.MUHAMMAD_ALI=Personagem("MUHAMMAD ALI", 1800, 3, 50, 0, (600*0.75,400//2 ),(self.ataque_perto, dash()))
         self.JESSE_JAMES=Personagem("JESSE JAMES", 2800, 1.2, 50, 120, (600*0.75,400//2), (self.ataque_perto, self.tiro))
         self.JOHN_F_KENNEDY=Personagem("JOHN F KENNEDY", 1000, .8, 50, 30, (600*0.75,400//2),(self.ataque_invocar, magia()))
         self.lista_1=[self.STALIN, self.GORBACHOV , self.IVAN_DRAGO, self.RASPUTIN]
@@ -38,7 +38,7 @@ class stats:
         self.IVAN_DRAGO=Personagem("IVAN DRAGO", 3000, 1, 40, 0, (600//4,400//2 ),(self.ataque_perto, magia()))
         self.RASPUTIN=Personagem("RASPUTIN", 1600, 1, 2, 190, (600//4,400//2 ),(cura(), magia()))
         self.RAMBO=Personagem("RAMBO", 3000, 1.2, 40, 0, (600*0.75,400//2 ),(self.ataque_perto, self.tiro))
-        self.MUHAMMAD_ALI=Personagem("MUHAMMAD ALI", 1800, 6, 50, 0, (600*0.75,400//2 ),(self.ataque_perto, dash()))
+        self.MUHAMMAD_ALI=Personagem("MUHAMMAD ALI", 1800, 3, 50, 0, (600*0.75,400//2 ),(self.ataque_perto, dash()))
         self.JESSE_JAMES=Personagem("JESSE JAMES", 2800, 1.2, 50, 120, (600*0.75,400//2), (self.ataque_perto, self.tiro))
         self.JOHN_F_KENNEDY=Personagem("JOHN F KENNEDY", 1000, .8, 50, 30, (600*0.75,400//2),(self.ataque_invocar, magia()))
         self.lista_1=[self.STALIN, self.GORBACHOV , self.IVAN_DRAGO, self.RASPUTIN]
