@@ -8,12 +8,12 @@ from sprite import Jogador
 
 
 class Personagem:
-    def __init__(self, nome:str, vida:float, velocidade:float, dano_fisico:int, dano_magico:int, posicao:Tuple[int, int], ataque:Tuple):
+    def __init__(self, nome:str, vida:float, velocidade:float, dano_fisico:int, dano_magico:int, ataque:Tuple):
         self.nome=nome
         self.vida=vida
         self.dano_fisico=dano_fisico
         self.dano_magico=dano_magico
-        self.posicao=posicao
+        self.posicao=(0, 0)
         self.ataque=ataque
         self.velocidade=velocidade
         self.velocidade_x_muda = velocidade
@@ -61,6 +61,7 @@ class Personagem:
         sprites = pg.sprite.Group()
         personagem = Jogador(self.nome, x, y, self.direcao)
         sprites.add(personagem)
+       
 
         font_subtitulo = pg.font.SysFont(None, ConfigJogo.Fonte_HISTORIA)
         self.subtitulo = font_subtitulo.render(

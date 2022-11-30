@@ -18,10 +18,11 @@ class Jogador(pygame.sprite.Sprite):
         j = self.seleciona_personagem()
         
         # faz o recorte na spritesheet daas sprites de cada personagem
-        for i in range(2):
-            img  = sprite_sheet.subsurface((i*448, j*672), (448, 672))
-            img = pygame.transform.scale(img, (45, 67))
-            self.imagens_jogador.append(img)
+        
+        img  = sprite_sheet.subsurface((self.direcao*448, j*672), (448, 672))
+        img = pygame.transform.scale(img, (45, 67))
+        self.imagens_jogador.append(img)
+            
         
         # desenha a primeira posicao do personagem 
         self.index_lista = 0 
