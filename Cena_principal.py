@@ -88,8 +88,8 @@ class CenaPrincipal:
         self.desenha_tempo()
         self.ataca_player_1()
         self.ataca_player_2()
-        self.player_2.desenha(self.tela)
-        self.player_1.desenha(self.tela)
+        self.player_2.desenha(self.tela).draw(self.tela)
+        self.player_1.desenha(self.tela).draw(self.tela)
         
                
         pg.display.flip()

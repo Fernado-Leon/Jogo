@@ -3,6 +3,7 @@ import pygame as pg
 from Cronometro import cronometro
 from CONFIG_JOGO import ConfigJogo
 from typing import Tuple
+from sprite import Jogador
 
 
 
@@ -56,21 +57,16 @@ class Personagem:
         y = self.posicao[1]
         l = ConfigJogo.tamanho_per
         a = ConfigJogo.tamanho_per
-        pg.draw.rect(
-            tela,
-            (0,0,0),
-            pg.rect.Rect(x, y, l, a)
-        )
-        pg.draw.rect(
-            tela,
-            (255,25,25),
-            pg.rect.Rect(x-2, y-ConfigJogo.meiotamanho_per, ConfigJogo.tamanho_per+2, 10)
-        )
+        
+        sprites = pg.sprite.Group()
+        personagem = Jogador(self.nome, x, y, self.direcao)
+        sprites.add(personagem)
+
         font_subtitulo = pg.font.SysFont(None, ConfigJogo.Fonte_HISTORIA)
         self.subtitulo = font_subtitulo.render(
           f' {self.vida}', True, ConfigJogo.COR_TITULO)
         tela.blit(self.subtitulo, (x-2, y-ConfigJogo.meiotamanho_per-12))
-        
+        return sprites
 
        
     
