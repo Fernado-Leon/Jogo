@@ -2,8 +2,8 @@
 class ConfigJogo:
 
 
-    LARGURA_TELA = 600
-    ALTURA_TELA = 400
+    LARGURA_TELA = 1
+    ALTURA_TELA = 1
     COR_TITULO = (0, 0, 0)
     FONTE_TITULO = 72
     FONTE_SUBTITULO = 36

@@ -11,13 +11,14 @@ from cena_vitoria import *
 class guerrafria:
     def __init__(self):
         pg.init()
+        '''
         # volume varia de 0 a 1
         pg.mixer.music.set_volume(0.5)
         # baixa o arquivo
         pg.mixer.music.load('m1.mp3')
         # toca a musica repetidammente
         pg.mixer.music.play(-1)
-
+        '''
       
 
     def rodar(self):
