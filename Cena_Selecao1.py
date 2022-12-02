@@ -93,7 +93,7 @@ class CenaSelecao1:
         pg.draw.rect(
             surface=self.tela,
             color=(255,255,255),
-            rect=(self.px-0.1*ConfigJogo.LARGURA_TELA,self.py_rect,self.px+0.03*ConfigJogo.LARGURA_TELA
+            rect=(self.px-0.1*ConfigJogo.LARGURA_TELA,self.py_rect,self.px*1.3
         // 2 , 0.1*ConfigJogo.ALTURA_TELA),
             width=3)
     def escolha(self)->int:
