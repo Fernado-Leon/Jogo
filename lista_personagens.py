@@ -34,7 +34,7 @@ class stats:
         self.soldado_3=Personagem("soldado", 300, 1, 20, 0,  (self.ataque_perto))
         self.ataque_invocar=minion([self.soldado_1, self.soldado_2, self.soldado_3])
         self.STALIN=Personagem("STALIN", 2000, 0.8, 35, 150, (self.ataque_invocar, magia()))
-        self.GORBACHOV=Personagem("GORBACHOV", 2800, 0.2, 40, 0, (self.ataque_perto, magia()))
+        self.GORBACHOV=Personagem("GORBACHOV", 2900, 0.2, 40, 0, (self.ataque_perto, magia()))
         self.IVAN_DRAGO=Personagem("IVAN DRAGO", 3000, 1, 40, 0, (self.ataque_perto, magia()))
         self.RASPUTIN=Personagem("RASPUTIN", 1500, 1, 2, 190, (cura(), magia()))
         self.RAMBO=Personagem("RAMBO", 3000, 1.2, 40, 0,(self.ataque_perto, self.tiro))
