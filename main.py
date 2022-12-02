@@ -7,3 +7,4 @@ def main():
     jogo.rodar()
 if __name__ == "__main__":
     main()
+  

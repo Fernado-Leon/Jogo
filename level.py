@@ -21,7 +21,7 @@ class Level:
                 x = col_index * ConfigJogo.TILE_SIZE
                 y = row_index * ConfigJogo.TILE_SIZE
 
-                terrain_tile_list = import_cut_graphics("../../../../../Downloads/IceTileset.png")
+                terrain_tile_list = import_cut_graphics("IceTileset.png")
                 tile_surface = terrain_tile_list[int(val)]
                 sprite = StaticTile(ConfigJogo.TILE_SIZE, x, y, tile_surface)
                 sprite_group.add(sprite)
