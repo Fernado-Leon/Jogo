@@ -52,7 +52,7 @@ class guerrafria:
                 #baixa o arquivo
                 pg.mixer.music.load('m1.wav')
                 # toca a musica repetidammente
-                pg.mixer.music.play(-1)
+                # pg.mixer.music.play(-1)
                 
                 cena.rodar()
                 indice_vitoria=cena.Vitoria()

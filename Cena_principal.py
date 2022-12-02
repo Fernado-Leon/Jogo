@@ -9,6 +9,7 @@ from Cena_Selecao1 import *
 from Cena_Selecao2 import *
 from Cronometro import *
 from ataque_fisico import *
+from level import Level
 
 
 class CenaPrincipal:
@@ -31,6 +32,7 @@ class CenaPrincipal:
         self.vida_2=self.player_2.vida
         self.velocidade_1=self.player_1.velocidade
         self.velocidade_2=self.player_2.velocidade
+        self.level = Level('gelo.tmx', tela)
 
     def rodar(self):
         while not self.fim:
@@ -89,7 +91,8 @@ class CenaPrincipal:
         
 
     def desenha(self):
-        self.tela.fill((255, 255, 255))
+        self.tela.fill('black')
+        self.level.run()
         self.desenha_tempo()
         self.ataca_player_1()
         self.ataca_player_2()
