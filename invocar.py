@@ -30,7 +30,7 @@ class minion:
 
       
         
-    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem, none):
             self.tela=tela
             self.desenha(self.tela) 
             if(((self.x_1-inimigo.posicao[0])**2)+ ((self.y_1-inimigo.posicao[1])**2))**0.5<=50 and self.desenhado_1==1:

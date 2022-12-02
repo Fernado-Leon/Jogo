@@ -8,9 +8,13 @@ class fisico:
         self.distancia_1=0
         self.distancia_2=0
         self.termina=0
+        self.velocidade_inicial=1
+        self.inimigo=0
       
         
-    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem, velocidade_inicial):
+            self.inimigo=inimigo
+            self.velocidade_inicial=velocidade_inicial
             pg.draw.circle(
             surface=tela,
             color=(220, 0, 0),
@@ -26,20 +30,27 @@ class fisico:
                     novo_x = inimigo.posicao[0] + 50
                     if novo_x+ConfigJogo.tamanho_per<ConfigJogo.LARGURA_TELA:
                         inimigo.posicao = (novo_x, inimigo.posicao[1])
+                        inimigo.velocidade_x_muda=0
 
 
                 if jogador.posicao[0]>inimigo.posicao[0]:
                     novo_x = inimigo.posicao[0] - 50
                     if novo_x+ConfigJogo.tamanho_per>0:
                         inimigo.posicao = (novo_x, inimigo.posicao[1])
+                        inimigo.velocidade_x_muda=0
+
 
                    
     def tempo(self):
-        if self.cronometro.tempo_passado()>1.6:
+        if self.cronometro.tempo_passado()>3:
+            self.inimigo.velocidade_x_muda=self.velocidade_inicial
             self.termina=1
             self.cronometro.reset()
+            
         return self.termina
     def reset(self):
         self.termina=0
+        
+
     
             

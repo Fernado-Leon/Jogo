@@ -29,6 +29,9 @@ class CenaPrincipal:
         self.cronometro_final=cronometro()
         self.vida_1=self.player_1.vida
         self.vida_2=self.player_2.vida
+        self.velocidade_1=self.player_1.velocidade
+        self.velocidade_2=self.player_2.velocidade
+
     def rodar(self):
         while not self.fim:
             self.Vitoria()
@@ -97,7 +100,8 @@ class CenaPrincipal:
         pg.display.flip()
     def ataca_player_1(self):
                 
-            if  pg.key.get_pressed()[pg.K_z] and self.cronometro_1.tempo_passado()>2   :
+            if  pg.key.get_pressed()[pg.K_z] and self.cronometro_1.tempo_passado()>2 :
+
                     self.player_1.ataque[1].dano(self.tela, self.player_1, self.player_2)
                     self.player_1.ataque[1].tempo()
                     if  self.player_1.ataque[1].termina==1:
@@ -105,7 +109,7 @@ class CenaPrincipal:
                         self.cronometro_1.reset()
                 
             if  pg.key.get_pressed()[pg.K_q] and self.cronometro_ataque_1.tempo_passado()>1.5 :
-                    self.player_1.ataque[0].dano(self.tela, self.player_1, self.player_2)
+                    self.player_1.ataque[0].dano(self.tela, self.player_1, self.player_2, self.velocidade_2)
                     self.player_1.ataque[0].tempo()
                     if self.player_1.ataque[0].termina==1:
                         self.cronometro_ataque_1.reset() 
@@ -113,13 +117,11 @@ class CenaPrincipal:
     def ataca_player_2(self):   
                 
             if  pg.key.get_pressed()[pg.K_o] and self.cronometro_ataque_2.tempo_passado()>1.5 :
-                    self.player_2.ataque[0].dano(self.tela, self.player_2, self.player_1)
+                    self.player_2.ataque[0].dano(self.tela, self.player_2, self.player_1, self.velocidade_1)
                     self.player_2.ataque[0].tempo()
                     if self.player_2.ataque[0].termina==1:
                         self.cronometro_ataque_2.reset()
                         self.player_2.ataque[0].reset()
-
-
 
             if  pg.key.get_pressed()[pg.K_p] and self.cronometro_2.tempo_passado()>2  :
                     self.player_2.ataque[1].dano(self.tela, self.player_2, self.player_1)

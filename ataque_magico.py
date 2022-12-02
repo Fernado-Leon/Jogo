@@ -31,7 +31,7 @@ class magia:
             radius=85,
             width=0
             )
-            if (((self.x-inimigo.posicao[0])**2)+ ((self.y-inimigo.posicao[1])**2))**0.5<=50:
+            if (((self.x-inimigo.posicao[0])**2)+ ((self.y-inimigo.posicao[1])**2))**0.5<=85:
                 inimigo.vida-=jogador.dano_magico//10
             self.mover_magia(jogador)
            
@@ -47,7 +47,7 @@ class magia:
                     self.posicao_magia=(self.x, self.y)
 
     def tempo(self):
-        if self.cronometro.tempo_passado()>5 or self.x>ConfigJogo.LARGURA_TELA or self.x<0 :
+        if self.cronometro.tempo_passado()>5 or self.x>=ConfigJogo.LARGURA_TELA or self.x<=0 :
             self.termina=1
             self.cronometro.reset()
             
