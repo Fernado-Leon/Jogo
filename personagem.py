@@ -50,7 +50,11 @@ class Personagem:
         if ((novo_y >= 0) and \
                 ((novo_y + ConfigJogo.tamanho_per) <= ConfigJogo.ALTURA_TELA)) and \
                     ((novo_x>=0) and ((novo_x +ConfigJogo.tamanho_per)<=ConfigJogo.LARGURA_TELA)):
-            self.posicao = (novo_x, novo_y)
+            if not ((novo_y<128 and novo_y>64-ConfigJogo.tamanho_per)  and (novo_x>128-ConfigJogo.tamanho_per and novo_x<224)):
+                if not ((novo_y<128 and novo_y>64-ConfigJogo.tamanho_per)  and (novo_x>1056-ConfigJogo.tamanho_per and novo_x<1152)):
+                    if not ((novo_y<576 and novo_y>512-ConfigJogo.tamanho_per)  and (novo_x>128-ConfigJogo.tamanho_per and novo_x<224)):
+                        if not ((novo_y<576 and novo_y>512-ConfigJogo.tamanho_per)  and (novo_x>1056-ConfigJogo.tamanho_per and novo_x<1152)):
+                            self.posicao = (novo_x, novo_y)
 
     def desenha(self, tela:pg.Surface):
         x = self.posicao[0]
@@ -68,7 +72,7 @@ class Personagem:
           f' {self.vida}', True, ConfigJogo.COR_TITULO)
         tela.blit(self.subtitulo, (x-2, y-ConfigJogo.meiotamanho_per-12))
         return sprites
-
+    
        
     
     
