@@ -54,7 +54,11 @@ class Personagem:
                 if not ((novo_y<128 and novo_y>64-ConfigJogo.tamanho_per)  and (novo_x>1056-ConfigJogo.tamanho_per and novo_x<1152)):
                     if not ((novo_y<576 and novo_y>512-ConfigJogo.tamanho_per)  and (novo_x>128-ConfigJogo.tamanho_per and novo_x<224)):
                         if not ((novo_y<576 and novo_y>512-ConfigJogo.tamanho_per)  and (novo_x>1056-ConfigJogo.tamanho_per and novo_x<1152)):
-                            self.posicao = (novo_x, novo_y)
+                            if not ((novo_y<576 and novo_y>448-ConfigJogo.tamanho_per)  and (novo_x>448-ConfigJogo.tamanho_per and novo_x<480)):
+                                if not ((novo_y<576 and novo_y>448-ConfigJogo.tamanho_per)  and (novo_x>800-ConfigJogo.tamanho_per and novo_x<832)):
+                                    if not ((novo_y<192 and novo_y>64-ConfigJogo.tamanho_per)  and (novo_x>448-ConfigJogo.tamanho_per and novo_x<480)):
+                                        if not ((novo_y<192 and novo_y>64-ConfigJogo.tamanho_per)  and (novo_x>800-ConfigJogo.tamanho_per and novo_x<832)):
+                                            self.posicao = (novo_x, novo_y)
 
     def desenha(self, tela:pg.Surface):
         x = self.posicao[0]

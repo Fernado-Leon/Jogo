@@ -73,7 +73,7 @@ class minion:
         (inimigo.posicao[1] - self.y_1) ** 2
         )
 
-        if dist_1 > ConfigJogo.tamanho_per:
+        if dist_1 > ConfigJogo.meiotamanho_per:
         
             minion_vx_1 = inimigo.posicao[0] - self.x_1
             minion_vy_1 = inimigo.posicao[1] - self.y_1
@@ -88,9 +88,17 @@ class minion:
             minion_vx_1 = 0
             minion_vy_1 = 0
 
-    
-        self.x_1 += minion_vx_1
-        self.y_1 += minion_vy_1
+        if not ((self.y_1<128 and self.y_1>64-ConfigJogo.meiotamanho_per)  and (self.x_1>128-ConfigJogo.meiotamanho_per and self.x_1<224)):
+                if not ((self.y_1<128 and self.y_1>64-ConfigJogo.meiotamanho_per)  and (self.x_1>1056-ConfigJogo.meiotamanho_per and self.x_1<1152)):
+                    if not ((self.y_1<576 and self.y_1>512-ConfigJogo.meiotamanho_per)  and (self.x_1>128-ConfigJogo.meiotamanho_per and self.x_1<224)):
+                        if not ((self.y_1<576 and self.y_1>512-ConfigJogo.meiotamanho_per)  and (self.x_1>1056-ConfigJogo.meiotamanho_per and self.x_1<1152)):
+                            if not ((self.y_1<576 and self.y_1>448-ConfigJogo.meiotamanho_per)  and (self.x_1>448-ConfigJogo.meiotamanho_per and self.x_1<480)):
+                                if not ((self.y_1<576 and self.y_1>448-ConfigJogo.meiotamanho_per)  and (self.x_1>800-ConfigJogo.meiotamanho_per and self.x_1<832)):
+                                    if not ((self.y_1<192 and self.y_1>64-ConfigJogo.meiotamanho_per)  and (self.x_1>448-ConfigJogo.meiotamanho_per and self.x_1<480)):
+                                        if not ((self.y_1<192 and self.y_1>64-ConfigJogo.meiotamanho_per)  and (self.x_1>800-ConfigJogo.meiotamanho_per and self.x_1<832)):    
+                                            self.x_1 += minion_vx_1
+                                            self.y_1 += minion_vy_1
+                                        
         self.posicao_minion_1=(self.x_1, self.y_1, self.l, self.a)
     def mover_minion_2(self, inimigo:Personagem):
         dist_2 = math.sqrt(
@@ -98,7 +106,7 @@ class minion:
         (inimigo.posicao[1] - self.y_2) ** 2
         )
 
-        if dist_2 > ConfigJogo.tamanho_per:
+        if dist_2 > ConfigJogo.meiotamanho_per:
         
             minion_vx_2 = inimigo.posicao[0] - self.x_2
             minion_vy_2 = inimigo.posicao[1] - self.y_2
@@ -116,6 +124,16 @@ class minion:
     
         self.x_2 += minion_vx_2
         self.y_2 += minion_vy_2
+        if not ((self.y_2<128 and self.y_2>64-ConfigJogo.meiotamanho_per)  and (self.x_2>128-ConfigJogo.meiotamanho_per and self.x_2<224)):
+                if not ((self.y_2<128 and self.y_2>64-ConfigJogo.meiotamanho_per)  and (self.x_2>1056-ConfigJogo.meiotamanho_per and self.x_2<1152)):
+                    if not ((self.y_2<576 and self.y_2>512-ConfigJogo.meiotamanho_per)  and (self.x_2>128-ConfigJogo.meiotamanho_per and self.x_2<224)):
+                        if not ((self.y_2<576 and self.y_2>512-ConfigJogo.meiotamanho_per)  and (self.x_2>1056-ConfigJogo.meiotamanho_per and self.x_2<1152)):
+                            if not ((self.y_2<576 and self.y_2>448-ConfigJogo.meiotamanho_per)  and (self.x_2>448-ConfigJogo.meiotamanho_per and self.x_2<480)):
+                                if not ((self.y_2<576 and self.y_2>448-ConfigJogo.meiotamanho_per)  and (self.x_2>800-ConfigJogo.meiotamanho_per and self.x_2<832)):
+                                    if not ((self.y_2<192 and self.y_2>64-ConfigJogo.meiotamanho_per)  and (self.x_2>448-ConfigJogo.meiotamanho_per and self.x_2<480)):
+                                        if not ((self.y_2<192 and self.y_2>64-ConfigJogo.meiotamanho_per)  and (self.x_2>800-ConfigJogo.meiotamanho_per and self.x_2<832)):
+                                            self.x_2 += minion_vx_2
+                                            self.y_2 += minion_vy_2
         self.posicao_minion_2=(self.x_2, self.y_2, self.l, self.a)
     def mover_minion_3(self, inimigo:Personagem):
         dist_3 = math.sqrt(
@@ -123,7 +141,7 @@ class minion:
         (inimigo.posicao[1] - self.y_3) ** 2
         )
 
-        if dist_3 > ConfigJogo.tamanho_per:
+        if dist_3 > ConfigJogo.meiotamanho_per:
         
             minion_vx_3 = inimigo.posicao[0] - self.x_3
             minion_vy_3 = inimigo.posicao[1] - self.y_3
@@ -139,8 +157,16 @@ class minion:
             minion_vy_3 = 0
 
     
-        self.x_3 += minion_vx_3
-        self.y_3 += minion_vy_3
+        if not ((self.y_3<128 and self.y_3>64-ConfigJogo.meiotamanho_per)  and (self.x_3>128-ConfigJogo.meiotamanho_per and self.x_3<224)):
+                if not ((self.y_3<128 and self.y_3>64-ConfigJogo.meiotamanho_per)  and (self.x_3>1056-ConfigJogo.meiotamanho_per and self.x_3<1152)):
+                    if not ((self.y_3<576 and self.y_3>512-ConfigJogo.meiotamanho_per)  and (self.x_3>128-ConfigJogo.meiotamanho_per and self.x_3<224)):
+                        if not ((self.y_3<576 and self.y_3>512-ConfigJogo.meiotamanho_per)  and (self.x_3>1056-ConfigJogo.meiotamanho_per and self.x_3<1152)):
+                            if not ((self.y_3<576 and self.y_3>448-ConfigJogo.meiotamanho_per)  and (self.x_3>448-ConfigJogo.meiotamanho_per and self.x_3<480)):
+                                if not ((self.y_3<576 and self.y_3>448-ConfigJogo.meiotamanho_per)  and (self.x_3>800-ConfigJogo.meiotamanho_per and self.x_3<832)):
+                                    if not ((self.y_3<192 and self.y_3>64-ConfigJogo.meiotamanho_per)  and (self.x_3>448-ConfigJogo.meiotamanho_per and self.x_3<480)):
+                                        if not ((self.y_3<192 and self.y_3>64-ConfigJogo.meiotamanho_per)  and (self.x_3>800-ConfigJogo.meiotamanho_per and self.x_3<832)):
+                                            self.x_3 += minion_vx_3
+                                            self.y_3 += minion_vy_3
         self.posicao_minion_3=(self.x_3, self.y_3, self.l, self.a)
     def tempo(self):
         if self.cronometro.tempo_passado()>4:

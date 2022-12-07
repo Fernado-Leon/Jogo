@@ -38,12 +38,14 @@ class fisico:
                     if novo_x+ConfigJogo.tamanho_per>0:
                         inimigo.posicao = (novo_x, inimigo.posicao[1])
                         inimigo.velocidade_x_muda=0
+                        inimigo.velocidade_y_muda=0
 
 
                    
     def tempo(self):
         if self.cronometro.tempo_passado()>3:
             self.inimigo.velocidade_x_muda=self.velocidade_inicial
+            self.inimigo.velocidade_y_muda=self.velocidade_inicial
             self.termina=1
             self.cronometro.reset()
             

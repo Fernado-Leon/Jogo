@@ -12,9 +12,9 @@ class stats:
     def __init__(self):
         self.tiro=tirinho()
         self.ataque_perto=fisico()
-        self.soldado_1=Personagem("soldado", 300, 1, 20, 0,  (self.ataque_perto))
-        self.soldado_2=Personagem("soldado", 300, 1, 20, 0,  (self.ataque_perto))
-        self.soldado_3=Personagem("soldado", 300, 1, 20, 0,  (self.ataque_perto))
+        self.soldado_1=Personagem("soldado", 300, .5, 20, 0,  (self.ataque_perto))
+        self.soldado_2=Personagem("soldado", 300, .5, 20, 0,  (self.ataque_perto))
+        self.soldado_3=Personagem("soldado", 300, .5, 20, 0,  (self.ataque_perto))
         self.ataque_invocar=minion([self.soldado_1, self.soldado_2, self.soldado_3])
         self.STALIN=Personagem("STALIN", 2000, 0.8, 35, 150, (self.ataque_invocar, magia()))
         self.GORBACHOV=Personagem("GORBACHOV", 3500, 0.2, 40, 0, (self.ataque_perto, magia()))
