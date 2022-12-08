@@ -11,7 +11,7 @@ class ConfigJogo:
     Fonte_HISTORIA=25
     VELOCIDADE_x=1
     VELOCIDADE_y=1
-    DURACAO_PARTIDA=60
+    DURACAO_PARTIDA=180
     tamanho_per=50
     meiotamanho_per=25
     SIZE = [LARGURA_TELA, ALTURA_TELA]

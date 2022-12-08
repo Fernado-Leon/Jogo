@@ -46,6 +46,8 @@ class Personagem:
         x, y = self.posicao
         novo_y = y + self.velocidade_y
         novo_x = x + self.velocidade_x
+        self.slow(novo_y, novo_x)
+        
 
         if ((novo_y >= 0) and \
                 ((novo_y + ConfigJogo.tamanho_per) <= ConfigJogo.ALTURA_TELA)) and \
@@ -76,6 +78,16 @@ class Personagem:
           f' {self.vida}', True, ConfigJogo.COR_TITULO)
         tela.blit(self.subtitulo, (x-2, y-ConfigJogo.meiotamanho_per-12))
         return sprites
+    def slow(self, novo_y, novo_x):
+        if ((novo_x>576-ConfigJogo.tamanho_per) and (novo_x<704))\
+             and ((novo_y<256) or (novo_y-ConfigJogo.tamanho_per>384)):
+            self.velocidade_x_muda=self.velocidade/2
+            self.velocidade_y_muda=self.velocidade/2
+        else:
+            self.velocidade_x_muda=self.velocidade
+            self.velocidade_y_muda=self.velocidade
+        
+        
     
        
     

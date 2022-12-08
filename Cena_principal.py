@@ -151,7 +151,7 @@ class CenaPrincipal:
                 self.fim = True
                 ConfigJogo.Tela=6
                 return indice_vitoria
-        if self.cronometro_final.tempo_passado()>=60:
+        if self.cronometro_final.tempo_passado()>=180:
                 indice_vitoria=3
                 self.fim = True
                 ConfigJogo.Tela=6
