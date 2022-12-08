@@ -3,12 +3,12 @@ from CONFIG_JOGO import ConfigJogo
 
 
 tela = pygame.display.set_mode((ConfigJogo.LARGURA_TELA, ConfigJogo.ALTURA_TELA))
-pygame.display.set_caption('Sprites')
+pygame.display.set_caption('Guerra Fria 2')
 
 sprite_sheet = pygame.image.load('spritesheet.png')
 
 class Jogador(pygame.sprite.Sprite):
-    def __init__(self, nome_jogador, pos_x, pos_y, direcao):
+    def __init__(self, nome_jogador:str, pos_x:float, pos_y:float, direcao:int):
         pygame.sprite.Sprite.__init__(self)
         self.imagens_jogador = []
         self.nome_jogador = nome_jogador
@@ -42,8 +42,6 @@ class Jogador(pygame.sprite.Sprite):
         return j
 
     def update(self):
-        '''NAO FUNCIONA'''
-        # deveria selecionar a sprite correta dependendo da direcao
         if self.direcao == 0:
             self.index_lista = 0
         if self.direcao == 1:

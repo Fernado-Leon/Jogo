@@ -98,7 +98,6 @@ class minion:
                                         if not ((self.y_1<192 and self.y_1>64-ConfigJogo.meiotamanho_per)  and (self.x_1>800-ConfigJogo.meiotamanho_per and self.x_1<832)):    
                                             self.x_1 += minion_vx_1
                                             self.y_1 += minion_vy_1
-                                        
         self.posicao_minion_1=(self.x_1, self.y_1, self.l, self.a)
     def mover_minion_2(self, inimigo:Personagem):
         dist_2 = math.sqrt(
@@ -122,8 +121,7 @@ class minion:
             minion_vy_2 = 0
 
     
-        self.x_2 += minion_vx_2
-        self.y_2 += minion_vy_2
+        
         if not ((self.y_2<128 and self.y_2>64-ConfigJogo.meiotamanho_per)  and (self.x_2>128-ConfigJogo.meiotamanho_per and self.x_2<224)):
                 if not ((self.y_2<128 and self.y_2>64-ConfigJogo.meiotamanho_per)  and (self.x_2>1056-ConfigJogo.meiotamanho_per and self.x_2<1152)):
                     if not ((self.y_2<576 and self.y_2>512-ConfigJogo.meiotamanho_per)  and (self.x_2>128-ConfigJogo.meiotamanho_per and self.x_2<224)):
@@ -169,7 +167,7 @@ class minion:
                                             self.y_3 += minion_vy_3
         self.posicao_minion_3=(self.x_3, self.y_3, self.l, self.a)
     def tempo(self):
-        if self.cronometro.tempo_passado()>4:
+        if self.cronometro.tempo_passado()>6:
             self.termina= 1
             self.cronometro.reset()
         return self.termina

@@ -20,7 +20,7 @@ class guerrafria:
         while True:
             if ConfigJogo.Tela==1:
                 ConfigJogo.LARGURA_TELA=1280
-                ConfigJogo.ALTURA_TELA=720
+                ConfigJogo.ALTURA_TELA=640
                 self.tela = pg.display.set_mode((
             ConfigJogo.LARGURA_TELA,
             ConfigJogo.ALTURA_TELA
@@ -41,7 +41,7 @@ class guerrafria:
             if ConfigJogo.Tela==5:
                
                 ConfigJogo.LARGURA_TELA=1280
-                ConfigJogo.ALTURA_TELA=720
+                ConfigJogo.ALTURA_TELA=640
                 self.tela = pg.display.set_mode((
             ConfigJogo.LARGURA_TELA,
             ConfigJogo.ALTURA_TELA
