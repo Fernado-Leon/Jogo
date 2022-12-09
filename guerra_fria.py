@@ -19,6 +19,7 @@ class guerrafria:
         ConfigJogo.Tela=1
         while True:
             if ConfigJogo.Tela==1:
+                pg.mixer.music.stop()
                 ConfigJogo.LARGURA_TELA=1280
                 ConfigJogo.ALTURA_TELA=640
                 self.tela = pg.display.set_mode((

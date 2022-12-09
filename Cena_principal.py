@@ -18,8 +18,8 @@ class CenaPrincipal:
         self.indice_2=per_2
         self.tela = tela
         self.status=stats()
-        self.player_1=self.status.lista_1[per_1]
-        self.player_2=self.status.lista_2[per_2]
+        self.player_1=self.status.lista_3[per_1]
+        self.player_2=self.status.lista_3[per_2]
         self.player_1.posicao=(ConfigJogo.LARGURA_TELA*.25, ConfigJogo.ALTURA_TELA//2)
         self.player_2.posicao=(ConfigJogo.LARGURA_TELA*.75, ConfigJogo.ALTURA_TELA//2)
         self.fim = False

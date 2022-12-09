@@ -26,6 +26,7 @@ class stats:
         self.JOHN_F_KENNEDY=Personagem("JOHN F KENNEDY", 1000, .8, 50, 30, (self.ataque_invocar, magia()))
         self.lista_1=[self.STALIN, self.GORBACHOV , self.IVAN_DRAGO, self.RASPUTIN]
         self.lista_2=[self.MUHAMMAD_ALI, self.JESSE_JAMES, self.RAMBO, self.JOHN_F_KENNEDY]
+        self.lista_3 = [self.STALIN, self.GORBACHOV , self.IVAN_DRAGO, self.RASPUTIN, self.MUHAMMAD_ALI, self.JESSE_JAMES, self.RAMBO, self.JOHN_F_KENNEDY]
     def reseta_tudo(self):
         self.tiro=tirinho()
         self.ataque_perto=fisico()
@@ -43,6 +44,7 @@ class stats:
         self.JOHN_F_KENNEDY=Personagem("JOHN F KENNEDY", 1000, .8, 50, 30, (self.ataque_invocar, magia()))
         self.lista_1=[self.STALIN, self.GORBACHOV , self.IVAN_DRAGO, self.RASPUTIN]
         self.lista_2=[self.MUHAMMAD_ALI, self.JESSE_JAMES, self.RAMBO, self.JOHN_F_KENNEDY]
+        self.lista_3 = [self.STALIN, self.GORBACHOV , self.IVAN_DRAGO, self.RASPUTIN, self.MUHAMMAD_ALI, self.JESSE_JAMES, self.RAMBO, self.JOHN_F_KENNEDY]
         
 
 

@@ -9,9 +9,9 @@ class CenaSelecao2:
     def __init__(self, tela:pg.Surface):
         self.tela = tela       
         self.fim= False
-        self.indice=0
+        self.indice=1
         self.status=stats()
-        self.lista=self.status.lista_2
+        self.lista=self.status.lista_3
         self.px=0
         self.py=0
         self.py_rect=(0.458 * ConfigJogo.ALTURA_TELA // 2) 
@@ -31,6 +31,15 @@ class CenaSelecao2:
            self.lista[2].nome, True, ConfigJogo.COR_TITULO)
         self.selecao4 = font_subtitulo.render(
             self.lista[3].nome, True, ConfigJogo.COR_TITULO)
+        self.selecao5 = font_subtitulo.render(
+            self.lista[4].nome, True, ConfigJogo.COR_TITULO)
+        self.selecao6 = font_subtitulo.render(
+            self.lista[5].nome, True, ConfigJogo.COR_TITULO)
+        self.selecao7 = font_subtitulo.render(
+            self.lista[6].nome, True, ConfigJogo.COR_TITULO)
+        self.selecao8 = font_subtitulo.render(
+            self.lista[7].nome, True, ConfigJogo.COR_TITULO)
+
 
 
     def rodar(self):
@@ -53,12 +62,12 @@ class CenaSelecao2:
             if pg.key.get_pressed()[pg.K_SPACE]:
                 self.fim = True
                 ConfigJogo.Tela=5
-            if   (event.type == pg.KEYDOWN and event.key == pg.K_i) and self.indice>0:
-                self.py_rect=self.py_rect-0.25* ConfigJogo.ALTURA_TELA // 2
+            if   (event.type == pg.KEYDOWN and event.key == pg.K_i) and self.indice>=1:
+                self.py_rect=self.py_rect-0.2* ConfigJogo.ALTURA_TELA // 2
                 self.indice-=1
              
-            if   (event.type == pg.KEYDOWN and event.key == pg.K_k) and self.indice<=2:
-                self.py_rect=self.py_rect+0.25* ConfigJogo.ALTURA_TELA // 2
+            if   (event.type == pg.KEYDOWN and event.key == pg.K_k) and self.indice<=6:
+                self.py_rect=self.py_rect+0.2* ConfigJogo.ALTURA_TELA // 2
                 self.indice+=1
               
                 
@@ -69,29 +78,48 @@ class CenaSelecao2:
         
 
     def atualiza_estado(self):
-        pass
+        self.tela.fill((50, 100, 255))
+        self.px = ConfigJogo.LARGURA_TELA // 2 - self.titulo.get_size()[0] // 2
+        self.py = (0.1 * ConfigJogo.ALTURA_TELA // 2)
+        self.tela.blit(self.titulo, (self.px, self.py))
 
     def desenha(self):
         self.tela.fill((50, 100, 255))
         self.px = ConfigJogo.LARGURA_TELA // 2 - self.titulo.get_size()[0] // 2
-        self.py = (0.2 * ConfigJogo.ALTURA_TELA // 2)
+        self.py = (0.1 * ConfigJogo.ALTURA_TELA // 2)
         self.tela.blit(self.titulo, (self.px, self.py))
         self.px = ConfigJogo.LARGURA_TELA // 2 - \
         self.selecao1.get_size()[0] // 2
-        self.py = (0.5 * ConfigJogo.ALTURA_TELA // 2) 
+        self.py = (0.3 * ConfigJogo.ALTURA_TELA // 2) 
         self.tela.blit(self.selecao1, (self.px, self.py))
         self.px = ConfigJogo.LARGURA_TELA // 2 - \
         self.selecao2.get_size()[0] // 2
-        self.py = (0.75 * ConfigJogo.ALTURA_TELA // 2) 
+        self.py = (0.5 * ConfigJogo.ALTURA_TELA // 2) 
         self.tela.blit(self.selecao2, (self.px, self.py))
         self.px = ConfigJogo.LARGURA_TELA // 2 - \
         self.selecao3.get_size()[0] // 2
-        self.py = (1 * ConfigJogo.ALTURA_TELA // 2) 
+        self.py = (0.7 * ConfigJogo.ALTURA_TELA // 2) 
         self.tela.blit(self.selecao3, (self.px, self.py))
         self.px = ConfigJogo.LARGURA_TELA // 2 - \
         self.selecao4.get_size()[0] // 2
-        self.py = (1.25 * ConfigJogo.ALTURA_TELA // 2) 
+        self.py = (0.9 * ConfigJogo.ALTURA_TELA // 2) 
         self.tela.blit(self.selecao4, (self.px, self.py))
+        self.px = ConfigJogo.LARGURA_TELA // 2 - \
+        self.selecao4.get_size()[0] // 2
+        self.py = (1.1 * ConfigJogo.ALTURA_TELA // 2) 
+        self.tela.blit(self.selecao5, (self.px, self.py))
+        self.px = ConfigJogo.LARGURA_TELA // 2 - \
+        self.selecao4.get_size()[0] // 2
+        self.py = (1.3 * ConfigJogo.ALTURA_TELA // 2) 
+        self.tela.blit(self.selecao6, (self.px, self.py))
+        self.px = ConfigJogo.LARGURA_TELA // 2 - \
+        self.selecao4.get_size()[0] // 2
+        self.py = (1.5 * ConfigJogo.ALTURA_TELA // 2) 
+        self.tela.blit(self.selecao7, (self.px, self.py))
+        self.px = ConfigJogo.LARGURA_TELA // 2 - \
+        self.selecao4.get_size()[0] // 2
+        self.py = (1.7 * ConfigJogo.ALTURA_TELA // 2) 
+        self.tela.blit(self.selecao8, (self.px, self.py))
         self.rect()
         pg.display.flip()
     def rect(self):
