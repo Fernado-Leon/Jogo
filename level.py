@@ -33,3 +33,17 @@ class Level:
 
         self.terrain_sprites.draw(self.display_surface)
         self.terrain_sprites.update(0)
+    def muda_mapa(self, indice):
+        if indice ==1:
+            #muda coluna inferior esquerda
+            pass
+        if indice ==2:
+            #muda coluna inferior direita
+            pass
+        if indice==3:
+            #muda coluna superior esquerda
+            pass
+        if indice==4:
+            #muda coluna superior direita
+            pass
+        

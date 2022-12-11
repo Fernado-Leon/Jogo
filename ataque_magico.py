@@ -2,7 +2,7 @@
 from personagem import *
 from CONFIG_JOGO import *
 from Cronometro import *
-from mapa import Mapa
+from level import *
 import pygame as pg
 
 
@@ -16,15 +16,13 @@ class magia:
         self.y=ConfigJogo.ALTURA_TELA//2
         self.posicao_magia=(self.x, self.y)
         self.termina=0
-        self.mapa=Mapa()
+        self.mapa=" "
         
         
       
         
-    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
-
-           
-            
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem, level:Level):
+            self.mapa=level
             self.posicao_magia=(self.x, self.y)
             pg.draw.circle(
             surface=tela,
@@ -62,12 +60,16 @@ class magia:
     def quebrar(self):
         if  ((self.y<576 and self.y>448-ConfigJogo.tamanho_per)  and (self.x>448-ConfigJogo.tamanho_per and self.x<480)):
             self.mapa.muda_mapa(1)
+            print("1")
         if  ((self.y<576 and self.y>448-ConfigJogo.tamanho_per)  and (self.x>800-ConfigJogo.tamanho_per and self.x<832)):
             self.mapa.muda_mapa(2)
+            print("2")
         if ((self.y<192 and self.y>64-ConfigJogo.tamanho_per)  and (self.x>448-ConfigJogo.tamanho_per and self.x<480)):
             self.mapa.muda_mapa(3)
+            print("3")
         if ((self.y<192 and self.y>64-ConfigJogo.tamanho_per)  and (self.x>800-ConfigJogo.tamanho_per and self.x<832)):
             self.mapa.muda_mapa(4)
+            print("4")
                         
 
               

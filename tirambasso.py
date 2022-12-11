@@ -20,7 +20,7 @@ class tirinho:
         
       
         
-    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem, none):
             self.direcao_tiro=jogador.direcao
            
           

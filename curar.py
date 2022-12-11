@@ -14,7 +14,7 @@ class cura:
       
         
    
-    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem,):
+    def dano(self, tela:pg.Surface, jogador:Personagem, inimigo:Personagem, none):
         if self.cronometro.tempo_passado()>4:
             pg.draw.circle(
             surface=tela,
