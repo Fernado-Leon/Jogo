@@ -2,6 +2,7 @@
 from personagem import *
 from CONFIG_JOGO import *
 from Cronometro import *
+from mapa import Mapa
 import pygame as pg
 
 
@@ -15,6 +16,7 @@ class magia:
         self.y=ConfigJogo.ALTURA_TELA//2
         self.posicao_magia=(self.x, self.y)
         self.termina=0
+        self.mapa=Mapa()
         
         
       
@@ -33,6 +35,7 @@ class magia:
             )
             if (((self.x-inimigo.posicao[0])**2)+ ((self.y-inimigo.posicao[1])**2))**0.5<=85:
                 inimigo.vida-=jogador.dano_magico//10
+            self.quebrar()
             self.mover_magia(jogador)
            
 
@@ -56,6 +59,16 @@ class magia:
         self.x=jogador.posicao[0]+ConfigJogo.meiotamanho_per
         self.y=jogador.posicao[1]+ConfigJogo.meiotamanho_per
         self.posicao_magia=(self.x, self.y)
+    def quebrar(self):
+        if  ((self.y<576 and self.y>448-ConfigJogo.tamanho_per)  and (self.x>448-ConfigJogo.tamanho_per and self.x<480)):
+            self.mapa.muda_mapa(1)
+        if  ((self.y<576 and self.y>448-ConfigJogo.tamanho_per)  and (self.x>800-ConfigJogo.tamanho_per and self.x<832)):
+            self.mapa.muda_mapa(2)
+        if ((self.y<192 and self.y>64-ConfigJogo.tamanho_per)  and (self.x>448-ConfigJogo.tamanho_per and self.x<480)):
+            self.mapa.muda_mapa(3)
+        if ((self.y<192 and self.y>64-ConfigJogo.tamanho_per)  and (self.x>800-ConfigJogo.tamanho_per and self.x<832)):
+            self.mapa.muda_mapa(4)
+                        
 
               
 
