@@ -19,8 +19,8 @@ class Jogador(pygame.sprite.Sprite):
         
         # faz o recorte na spritesheet daas sprites de cada personagem
         
-        img  = sprite_sheet.subsurface((self.direcao*448, j*672), (448, 672))
-        img = pygame.transform.scale(img, (45, 67))
+        img  = sprite_sheet.subsurface((self.direcao*832, j*1344), (832, 1344))
+        img = pygame.transform.scale(img, (83, 135))
         self.imagens_jogador.append(img)
             
         

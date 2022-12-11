@@ -4,19 +4,21 @@ from Cronometro import *
 import pygame as pg
 import math
 import random
+from random import randint
 from typing import List
+
 class minion:
     def __init__(self, soldado:List[Personagem]):
         self.cronometro=cronometro()
         self.distancia_1=0
         self.distancia_2=0
         self.soldado=soldado
-        self.x_1=ConfigJogo.LARGURA_TELA//2
-        self.y_1=ConfigJogo.ALTURA_TELA//2 
-        self.x_2=ConfigJogo.LARGURA_TELA//2
-        self.y_2=ConfigJogo.ALTURA_TELA//2
-        self.x_3=ConfigJogo.LARGURA_TELA//2
-        self.y_3=ConfigJogo.ALTURA_TELA//2
+        self.x_1 = randint(0, 1280)
+        self.y_1 = randint(0, 640) 
+        self.x_2 = randint(0, 1280)
+        self.y_2 = randint(0, 640) 
+        self.x_3 = randint(0, 1280)
+        self.y_3 = randint(0, 640) 
         self.l = ConfigJogo.meiotamanho_per
         self.a = ConfigJogo.meiotamanho_per
         self.posicao_minion_1=(self.x_1, self.y_1, self.l, self.a)
@@ -82,8 +84,8 @@ class minion:
             minion_vx_1 /= norma
             minion_vy_1 /= norma
           
-            minion_vx_1 *= self.soldado[0].velocidade
-            minion_vy_1 *= self.soldado[0].velocidade
+            minion_vx_1 *= 5*(self.soldado[2].velocidade)
+            minion_vy_1 *= 5*(self.soldado[2].velocidade)
         else:
             minion_vx_1 = 0
             minion_vy_1 = 0
@@ -114,8 +116,8 @@ class minion:
             minion_vx_2 /= norma
             minion_vy_2 /= norma
           
-            minion_vx_2 *= self.soldado[1].velocidade
-            minion_vy_2 *= self.soldado[1].velocidade
+            minion_vx_2 *= 5*(self.soldado[2].velocidade)
+            minion_vy_2 *= 5*(self.soldado[2].velocidade)
         else:
             minion_vx_2 = 0
             minion_vy_2 = 0
@@ -148,8 +150,8 @@ class minion:
             minion_vx_3 /= norma
             minion_vy_3 /= norma
           
-            minion_vx_3 *= self.soldado[2].velocidade
-            minion_vy_3 *= self.soldado[2].velocidade
+            minion_vx_3 *= 5*(self.soldado[2].velocidade)
+            minion_vy_3 *= 5*(self.soldado[2].velocidade)
         else:
             minion_vx_3 = 0
             minion_vy_3 = 0
@@ -174,12 +176,12 @@ class minion:
     def reset(self):
         self.aleatorio=random.randint(1, 4)
         self.termina=0
-        self.x_1=ConfigJogo.LARGURA_TELA//2
-        self.y_1=ConfigJogo.ALTURA_TELA*.66
-        self.x_2=ConfigJogo.LARGURA_TELA//2
-        self.y_2=ConfigJogo.ALTURA_TELA//2
-        self.x_3=ConfigJogo.LARGURA_TELA//2
-        self.y_3=ConfigJogo.ALTURA_TELA*.33
+        self.x_1 = randint(0, 1280)
+        self.y_1 = randint(0, 640) 
+        self.x_2 = randint(0, 1280)
+        self.y_2 = randint(0, 640) 
+        self.x_3 = randint(0, 1280)
+        self.y_3 = randint(0, 640) 
         self.desenhado_1==0
         self.desenhado_2==0
         

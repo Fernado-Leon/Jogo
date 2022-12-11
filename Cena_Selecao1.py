@@ -7,7 +7,7 @@ import sys
 
 
 class CenaSelecao1:
-    def __init__(self, tela:pg.Surface):
+    def __init__(self, tela:pg.Surface, jogador, cor, numero):
         self.tela = tela       
         self.fim= False
         self.indice=1
@@ -16,6 +16,9 @@ class CenaSelecao1:
         self.px=0
         self.py=0
         self.py_rect=(0.458 * ConfigJogo.ALTURA_TELA // 2) 
+        self.jogador = jogador
+        self.cor = cor
+        self.numero = numero
         
 
 
@@ -24,7 +27,7 @@ class CenaSelecao1:
         font_subtitulo = pg.font.SysFont(None, ConfigJogo.FONTE_SUBTITULO)
         
         self.titulo = font_titulo.render(
-            f'JOGADOR 1', True, ConfigJogo.COR_TITULO)
+            f'{self.jogador}', True, ConfigJogo.COR_TITULO)
         self.selecao1 = font_subtitulo.render(
             self.lista[0].nome, True, ConfigJogo.COR_TITULO)
         self.selecao2 = font_subtitulo.render(
@@ -62,7 +65,7 @@ class CenaSelecao1:
        
             if pg.key.get_pressed()[pg.K_SPACE]:
                 self.fim = True
-                ConfigJogo.Tela=4
+                ConfigJogo.Tela = self.numero
             if   (event.type == pg.KEYDOWN and event.key == pg.K_w) and self.indice>=1:
                 self.py_rect=self.py_rect-0.2* ConfigJogo.ALTURA_TELA // 2
                 self.indice-=1
@@ -72,7 +75,7 @@ class CenaSelecao1:
                 self.indice+=1
 
     def atualiza_estado(self):
-        self.tela.fill((255, 100, 50))
+        self.tela.fill((self.cor))
         self.px = ConfigJogo.LARGURA_TELA // 2 - self.titulo.get_size()[0] // 2
         self.py = (0.1 * ConfigJogo.ALTURA_TELA // 2)
         self.tela.blit(self.titulo, (self.px, self.py))

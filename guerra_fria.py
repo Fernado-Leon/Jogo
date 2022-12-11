@@ -3,9 +3,9 @@ from CONFIG_JOGO import ConfigJogo
 from Cena_inicial import Cenainicial
 from Cena_historia import Historia
 from Cena_Selecao1 import *
-from Cena_Selecao2 import *
 from Cena_principal import *
 from cena_vitoria import *
+from lista_personagens import stats
 
 
 class guerrafria:
@@ -13,15 +13,14 @@ class guerrafria:
         pg.init()
         
        
-      
-
     def rodar(self):
-        ConfigJogo.Tela=1
+
+        ConfigJogo.Tela = 1
         while True:
             if ConfigJogo.Tela==1:
                 pg.mixer.music.stop()
-                ConfigJogo.LARGURA_TELA=1280
-                ConfigJogo.ALTURA_TELA=640
+                ConfigJogo.LARGURA_TELA = 1280
+                ConfigJogo.ALTURA_TELA = 640
                 self.tela = pg.display.set_mode((
             ConfigJogo.LARGURA_TELA,
             ConfigJogo.ALTURA_TELA
@@ -32,11 +31,11 @@ class guerrafria:
                 cena=Historia(self.tela)
                 cena.rodar()
             if ConfigJogo.Tela==3:
-                cena=CenaSelecao1(self.tela)
+                cena=CenaSelecao1(self.tela, 'JOGADOR 1', 'red', 4)
                 cena.rodar()
                 indice_1=cena.escolha()
             if ConfigJogo.Tela==4:
-                cena=CenaSelecao2(self.tela)
+                cena=CenaSelecao1(self.tela, 'JOGADOR 2', 'blue', 5)
                 cena.rodar()
                 indice_2=cena.escolha()
             if ConfigJogo.Tela==5:

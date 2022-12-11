@@ -6,7 +6,7 @@ from CONFIG_JOGO import ConfigJogo
 from personagem import Personagem
 from lista_personagens import *
 from Cena_Selecao1 import *
-from Cena_Selecao2 import *
+
 from Cronometro import *
 from ataque_fisico import *
 from level import Level
@@ -89,7 +89,6 @@ class CenaPrincipal:
         
       
         
-
     def desenha(self):
         self.tela.fill('black')
         self.level.run()
