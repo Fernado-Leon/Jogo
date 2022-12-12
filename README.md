@@ -4,6 +4,7 @@ O jogo consiste numa batalha de arena 1x1, baseado nos eventos da guerra fria hi
 
 
 /os personagens tem ataques separados em diferentes classes, qualquer atributo que quiser conferir a tupla em lista_personagens.py
+Ambos são selecionados por w, s e espaço, quando o mesmo personagem é selecionado, apenas um sprite aparece em tela.
 
 Sendo assim, cada personagem tem dois ataque diferentes, sendo o player_1, atacando com q e z, e o player_2 com p e o. Temos ua classe para cada ataque, sendo um ataque fisico, um magico, um projetil, uma cura, uma invocação e um teleporte baseado na posicao do mouse.
 

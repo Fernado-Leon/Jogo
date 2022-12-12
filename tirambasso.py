@@ -52,7 +52,7 @@ class tirinho:
         self.y=jogador.posicao[1]+ConfigJogo.meiotamanho_per
         self.posicao_magia=(self.x, self.y)
     def tempo(self):
-        if self.cronometro.tempo_passado()>2:
+        if self.cronometro.tempo_passado()>3:
             self.termina=1
             self.cronometro.reset()
               
